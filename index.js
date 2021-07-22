@@ -11,7 +11,7 @@ app.get('/index.html', function (req, res) {
 app.get('/:url', function (req, res) {  
   res.sendFile(__dirname + req.url);
 });
-app.get('/:url[.js]', function (req, res) {
+app.get('/src/:url[.js]', function (req, res) {
   res.sendFile(__dirname + req.url);
 });
 app.get('/:url[.css]', function (req, res) {    
