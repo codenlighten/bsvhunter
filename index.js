@@ -21,6 +21,7 @@ app.get('/assets/:url[.png]', function (req, res) {
   res.sendfile(__dirname + req.url);
 });
 
-http.listen(3000, function(){
+http.listen(process.env.PORT || 3000, function(){
     console.log("Listening on port 3000");
 })
+
