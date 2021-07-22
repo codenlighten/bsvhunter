@@ -1,3 +1,6 @@
+let screenHeight = window.screen.availHeight
+let screenWidth = window.screen.availWidth
+
 var config = {
   type: Phaser.AUTO,
   width: 800,
@@ -22,20 +25,22 @@ var platforms;
 var cursors;
 var score = 0;
 var scoreText;
+var gameName;
 
 var game = new Phaser.Game(config);
 
 function preload ()
 {
-  this.load.image('sky', 'assets/sky.png');
+  this.load.image('sky', 'assets/outerspace.png');
   this.load.image('ground', 'assets/platform.png');
-  this.load.image('star', 'assets/bsv.png');
+  this.load.image('star', 'assets/bsv4.png');
   this.load.image('bomb', 'assets/bomb.png');
   this.load.spritesheet('dude', 'assets/dude.png', { frameWidth: 32, frameHeight: 48 });
 }
 
 function create ()
-{
+{ 
+   
   this.add.image(400, 300, 'sky');
 
   platforms = this.physics.add.staticGroup();
@@ -90,8 +95,8 @@ function create ()
 
   this.physics.add.overlap(player, stars, collectStar, null, this);
 
-  scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
-  
+  scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: 'white', color: 'white' });
+//   gameName = this.add.text(500, 550, 'BSVHunter', { fontStyle:"bold", fontSize: '50px', fill: '#5c1799', color: 'purple'})
   bombs = this.physics.add.group();
 
   this.physics.add.collider(bombs, platforms);
