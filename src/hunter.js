@@ -3,8 +3,8 @@ let screenWidth = window.screen.availWidth
 
 var config = {
   type: Phaser.AUTO,
-  width: 800,
-  height: 600,
+  width: screenHeight,
+  height: screenWidth,
   physics: {
       default: 'arcade',
       arcade: {
